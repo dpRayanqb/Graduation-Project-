@@ -1,0 +1,197 @@
+<html> 
+<head>
+
+  <link rel="stylesheet" type="text/css" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\uploadpage.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <!-- <script src="form.js"></script> -->
+  
+  <title>Upload Page</title>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</head>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+</script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDYuROPGZhuJ1kRC2KBghTxGKYZ-u4_nD8",
+    authDomain: "form-c5ed7.firebaseapp.com",
+    databaseURL: "https://form-c5ed7.firebaseio.com",
+    projectId: "form-c5ed7",
+    storageBucket: "form-c5ed7.appspot.com",
+    messagingSenderId: "770233709185",
+    appId: "1:770233709185:web:1343e9d048cf3f7b9f5380"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const selectedFile = document.getElementById('file');
+  selectedFile.change(function(event){
+    selectedFile = event.target.file[0];
+  });
+
+
+  function uploadFile(){
+    var filename = selectedFile;
+    var storageRef = firebase.storage().ref('/Documents/' + filename);
+    var uploadTask = storageRef.put(selectedFile);
+    // Register three observers:
+    // 1. 'state_changed' observer, called any time the state changes
+    // 2. Error observer, called on failure
+    // 3. Completion observer, called on successful completion
+    uploadTask.on('state_changed', function(snapshot){
+      // Observe state change events such as progress, pause, and resume
+      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    }, function(error) {
+      // Handle unsuccessful uploads
+    }, function() {
+      // Handle successful uploads on complete
+      // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+      uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+        console.log('File available at', downloadURL);
+      });
+    
+      });
+  }
+</script>
+
+<!-- <script>
+
+  // Set the configuration for your app
+  // TODO: Replace with your app's config object
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDYuROPGZhuJ1kRC2KBghTxGKYZ-u4_nD8",
+    authDomain: "form-c5ed7.firebaseapp.com",
+    databaseURL: "https://form-c5ed7.firebaseio.com",
+    projectId: "form-c5ed7",
+    storageBucket: "form-c5ed7.appspot.com",
+    messagingSenderId: "770233709185",
+    appId: "1:770233709185:web:1343e9d048cf3f7b9f5380"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Get Elements 
+  var uploader = document.getElementById("uploader");
+  var fileButton = document.getElementById("filebutton").addEventListener("change" , function(e){
+
+  //Listen for file selection 
+  
+  
+    // Get File
+      var file = e.target.files[0];
+    
+    // Create a Storage ref
+      var storageRef = firebase.storage().ref("Uni_Templates/" + file.name);
+    
+    // Upload file
+      var task = storageRef.put(file);
+
+    // Update a progress bar 
+    task.on("state_changed" , 
+    function progress(snapshot){
+      var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      uploader.value = percentage;
+    }
+    // function error(err){
+
+    // },
+    // function complete(){
+
+    // }
+    );
+  });
+</script> -->
+
+<body style="background-image: linear-gradient(to top, #30cfd0 0%, #330867 );">
+      <div class="container" style="height: 100%; background-color: aliceblue;">
+        
+      
+      <!--        info navbar -->
+      <nav class="navbar navbar-expand-lg bg-rose">
+        <div class="container">
+          <div class="navbar-translate">
+            <a class="navbar-brand" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\homePage.html" style="color: black; " >Menu</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="active nav-item">
+                <a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\homePage.html" class="nav-link" style="color: black;">
+                    Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\TrainingProgress.html" class="nav-link" style="color: black;">
+                  Training Progress
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://edugate.ksu.edu.sa" class="nav-link" style="color: black;">
+                  Edugate
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--        end info navbar -->
+
+
+       <div class="container" style="background-color: aliceblue; margin-top: 5%; border-radius: 20px;" >
+        
+     <div class="text-left">
+          
+            
+            
+            <h2 style="margin-left: 15%; margin-top: 5%; color:black; padding-top: 3%;"> Step1. Submit Company Confirmation</h2>
+            <br>
+            <article style="text-align: left;color:black;padding-right: 13%; padding-left: 13%;">In this step you need to upload the company confirmation for the Internship and you can get this company confirmation by visiting the company you want to train at and ask them if they accept a Student from King Saud University to train for 3 months or 300 working hours, and by getting the confirmation you must scan the paper and upload it here in PDF extension to pass this step </article>
+            <br>  
+            
+            <div style="border-color: black; border-style: solid; border-radius: 20px; margin-left: 13%;margin-right: 13%;border: 1px solid;">
+              <h4 style="margin-left: 2%; margin-top: 2%;"> Upload file</h4>
+              
+              <div style="background-color: black;height: 1px; width: 100%;margin-top: 2%;"></div>
+            <textarea style="margin-left: 10%; margin-top: 2%;"rows= "9"cols="70" placeholder="Write a Comment Here"></textarea>
+              
+              
+            <br>
+                
+            <br>
+            
+            <input style="margin-left:10% ;" type="file" id="file" value="upload"/>
+            <button id="submit-btn" onclick="uploadFile()">Submit</button>
+            </div>
+            
+          <br>
+        </div>
+      </div>
+    </div>
+  
+</body>
+
+
+
+
+
+
+
+</html>

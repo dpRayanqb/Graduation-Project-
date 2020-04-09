@@ -1,0 +1,245 @@
+body{
+
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+article, aside, footer, header, nav, section {
+    display: block;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all ease-out 0.2s;
+    background-color: transparent;
+}
+
+
+.icon-lock {
+   width: 48px;
+   height: 48px;
+   position: relative;
+   overflow: hidden;
+   margin-left: 25px;
+   margin-bottom: 25px;
+ }
+ 
+ .icon-lock .lock-top-1 {
+   width: 40%;
+   height: 40%;
+   position: absolute;
+   left: 50%;
+   margin-left: -20%;
+   top: 14%;
+   background-color: #000;
+   border-radius: 40%;
+ }
+ 
+ .icon-lock .lock-top-2 {
+   width: 24%;
+   height: 40%;
+   position: absolute;
+   left: 50%;
+   margin-left: -12%;
+   top: 22%;
+   background-color: #151517;
+   border-radius: 25%;
+ }
+ 
+ .icon-lock .lock-body {
+   width: 60%;
+   height: 48%;
+   position: absolute;
+   left: 50%;
+   margin-left: -30%;
+   bottom: 11%;
+   background-color: #000;
+   border-radius: 15%;
+ }
+ 
+ .icon-lock .lock-hole {
+   width: 16%;
+   height: 16%;
+   position: absolute;
+   left: 50%;
+   margin-left: -8%;
+   top: 51%;
+   border-radius: 100%;
+   background-color: #151517;
+ }
+ 
+ .icon-lock .lock-hole:after {
+   content: "";
+   width: 43%;
+   height: 78%;
+   position: absolute;
+   left: 50%;
+   margin-left: -20%;
+   top: 100%;
+   background-color: inherit;
+ }
+
+.component-card article {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    transform: translate3d(0, 3em, 0);
+    transform-style: preserve-3d;
+    opacity: 1;
+    animation: fade ease-out 0.5s forwards;
+    animation-delay: 1.4s;
+}
+.component-card article .post-meta {
+    color: whitesmoke;
+    font-size: 0.75em;
+    line-height: 1.334em;
+    margin: 0;
+}
+.component-card article .inner {
+    background: rgb(241, 241, 241);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 0;
+    max-width: none;
+    box-sizing: border-box;
+    transition: all ease-out 0.2s;
+    transform: scale(1);
+    transform-style: preserve-3d;
+}
+.component-card article .post-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.component-card article .post-image {
+    position: relative;
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    max-height: 300px;
+    margin: -15px -15px 0;
+}
+.component-card article .post-image:after {
+    position: absolute;
+    left: -15px;
+    bottom: -15px;
+    width: 110%;
+    height: 30px;
+    background:  whitesmoke;
+    border-top: 4px solid #e65100;
+    box-shadow: 0 0 2em rgba(0, 0, 0, .2);
+    transform: rotate(3deg);
+    transition: all ease-out 0.2s;
+}
+.component-card article .post-image img {
+    transition: all ease-out 0.3s;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    opacity: 1;
+}
+.component-card article .post-footer:after, .component-card article .post-image:after, .component-card article .post-nav:after {
+    content: "";
+}
+.component-card article .post-title {
+    position: relative;
+    color: #666;
+    font-size: 1.75em;
+    line-height: 1;
+    font-weight: 800;
+    text-indent: -1px;
+    letter-spacing: -1px;
+    margin: 0;
+}
+.component-card article .post-title:before {
+    position: absolute;
+    left: 0;
+    bottom: -0.334em;
+    width: 1em;
+    margin-bottom: -2px;
+    border-bottom: 4px solid #e65100;
+}
+.component-card article .post-title a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: inherit;
+}
+.component-card article .post-excerpt {
+    margin: 5px 0;
+}
+.component-card article .post-more {
+    display: block;
+    margin: 15px 0;
+}
+.component-card article .post-more a {
+    display: inline-block;
+    font-size: 0.875em;
+    line-height: 1.143em;
+    font-weight: 400;
+    color: #363740;
+}
+.component-card article .post-more a i {
+    color: #e65100;
+}
+.component-card article:focus .inner, .component-card article:hover .inner {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .05), 0 2px 6px rgba(0, 0, 0, .05), 0 8px 48px rgba(0, 0, 0, .1);
+}
+.component-card article:focus .post-image img, .component-card article:hover .post-image img {
+    transform: scale(1.125);
+    opacity: 0.5;
+}
+.component-card article:focus .post-image, .component-card article:hover .post-image {
+    background: #e65100;
+}
+
+
+#progressbar {
+   margin-bottom: 30px;
+   overflow: hidden;
+   /*CSS counters to number the steps*/
+   counter-reset: step;
+}
+#progressbar li {
+   list-style-type: none;
+   color: rgb(110, 106, 106);
+   text-transform: uppercase;
+   font-size: 9px;
+   width: 33.33%;
+   float: left;
+   position: relative;
+}
+#progressbar li:before {
+   content: counter(step);
+   counter-increment: step;
+   width: 20px;
+   line-height: 20px;
+   display: block;
+   font-size: 10px;
+   color: #333;
+   background:rgb(110, 106, 106);
+   border-radius: 3px;
+   margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+   content: '';
+   width: 100%;
+   height: 2px;
+   background:rgb(110, 106, 106);
+   position: absolute;
+   left: -50%;
+   top: 9px;
+   z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+   /*connector not needed before the first step*/
+   content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+   background: #27AE60;
+   color: rgb(110, 106, 106);
+}

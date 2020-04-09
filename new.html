@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title> Form </title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+
+        <script src="form.js"></script>
+    </head>
+
+    <body>
+
+
+        <div id="formContainer" class="loginbox" style="width: fit-content;"> 
+            <img src="ksu logo.png" class="avatar">
+            <h1>Internship Managment System</h1>
+            <h1>نظام إدارة التدريب التعاوني</h1>
+            <p>Username</p>
+            <input type="text" placeholder="Enter Email" id="email"/>
+            <p>Password</p>
+            <input type="password" placeholder="Enter Password" id="password"/>
+
+
+            <button onclick="signIn()" id="signIn" style="margin-left: 28%;"> Sign In </button>
+            
+        
+        </div>
+        <script>
+            firebase.auth().onAuthStateChanged(user => {
+                if(user) {
+                    window.location = 'homePage.html'; //After successful login, user will be redirected to home.html
+                }
+            })
+        </script>
+
+    </body>
+
+
+</html>

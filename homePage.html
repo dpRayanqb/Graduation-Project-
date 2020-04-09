@@ -1,0 +1,314 @@
+<html>
+<head>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <link rel="stylesheet" type="text/css" href="HomePageStyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="materia-kit.css">
+    
+    <title>Home Page</title>>
+
+
+</head>
+
+<body style="background-image:linear-gradient(to top, #30cfd0 0%, #330867 100%)">
+  <div id="user_div" class="container" style="height: 100%; background-color: aliceblue;">
+    
+         <!--        info navbar -->
+         <nav class="navbar navbar-expand-lg bg-rose">
+            <div class="container">
+              <div class="navbar-translate">
+                <a class="navbar-brand" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\homePage.html" style="color: black;" >Menu</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="active nav-item">
+                    <a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\homePage.html" class="nav-link" style="color: black;">
+                        Home
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\TrainingProgress.html" class="nav-link" style="color: black;">
+                      Training Progress
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://edugate.ksu.edu.sa" class="nav-link" style="color: black;">
+                      Edugate
+                    </a>
+                  </li>
+                  
+                <button onclick="signOut()" style="color: black"> LogOut </button>
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!--        end info navbar -->
+    <div class="main main-raised">
+        <div class="container">
+            <div class="section text-center">
+            <h2 style="color: black">
+              Here are the steps to finish your training 
+            </h2>
+            </div>
+    
+    
+          
+    
+            <div class="row component-card" style="padding-bottom: 12%;">
+              <div class="col-xs-12 col-sm-6 col-lg-3">
+                <article>
+                  <div class="post-card inner" style="background-color: aliceblue;">
+                    <a class="post-link js-ajax-link" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\uploadPage.html"></a>
+                    <!-- <figure class="post-image"> -->
+                      <!-- <a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\uploadPage.html" class="js-ajax-link"> -->
+                        <img src="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\screenshot_11.png" alt="Submit company confirmation">
+                      <!-- </a> -->
+                    <!-- </figure> -->
+                    <span class="post-meta">
+                      <!-- <span class="post-date">May 21, 2019</span> -->
+                    </span>
+                    <h2 class="post-title" style="margin-top: 3%;"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\uploadPage.html" class="js-ajax-link">1.Submit Company Confirmation</a></h2>
+                    <p class="post-excerpt" >In this step you need submit the company confirmation approval</p>
+                    <span class="post-more"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\uploadPage.html" class="js-ajax-link"> <i class="fa fa-chevron-right"></i></a></span>
+                  </div>
+                </article>
+              </div>
+    
+             
+    
+              <div class="col-xs-12 col-sm-6 col-lg-3" style="z-index: 1;">
+                
+                
+                <article>
+                    
+                  <div class="post-card inner" style="background-color: aliceblue; ">
+                    
+
+                    <a class="post-link js-ajax-link" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\submitTrainingPlan.html"  ></a>
+                    <!-- <figure class="post-image" style="z-index: 1; ">
+                      <a href="#" class="js-ajax-link"> -->
+                        <img style="width: 250px; height: 250px;" src="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\screenshot_12.png" alt="Submit training plan">
+                      <!-- </a>
+                    </figure> -->
+                    <span class="post-meta">
+                      <!-- <span class="post-date">May 21, 2019</span> -->
+                    </span>
+                    <h2 class="post-title" style="margin-top: 3%;"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\submitTrainingPlan.html" class="js-ajax-link">2.Submit Training plan</a></h2>
+                    <p class="post-excerpt">In this step you need to submit the training plan</p>
+                    <span class="post-more"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\submitTrainingPlan.html" class="js-ajax-link"> <i class="fa fa-chevron-right"></i></a></span>
+                  </div>
+                </article>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-lg-3">
+                <article>
+                  <div class="post-card inner" style="background-color: aliceblue;">
+                    
+                    <a class="post-link js-ajax-link" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\submitEvaluationForm.html"></a>
+                    <!-- <figure class="post-image">
+                      <a href="#" class="js-ajax-link"> -->
+                        <img src="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\screenshot_16.png" alt="Submit evaluation form">
+                      <!-- </a>
+                    </figure> -->
+                    <span class="post-meta">
+                      <!-- <span class="post-date">May 21, 2019</span> -->
+                    </span>
+                   
+                    <h2 class="post-title" style="margin-top: 3%;"><a href="#" class="js-ajax-link">3.Submit evaluation form</a></h2>
+                    <p class="post-excerpt">In this step you need to submit the evaluation form</p>
+                    <span class="post-more"><a href="#" class="js-ajax-link"> <i class="fa fa-chevron-right"></i></a></span>
+                  </div>
+                </article>
+              </div>
+    
+              <div class="col-xs-12 col-sm-6 col-lg-3">
+                  <article>
+                    <div class="post-card inner" style="background-color: aliceblue;">
+                        
+                      <a class="post-link js-ajax-link" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\submitTrainingReport.html"></a>
+                      <!-- <figure class="post-image" style="z-index: 1;">
+                        <a href="#" class="js-ajax-link"> -->
+                          <img style="width: 250px; height: 250px;" src="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\screenshot_15.png" alt="Submit training report">
+                        <!-- </a>
+                        
+                      </figure> -->
+                      <span class="post-meta">
+                        <!-- <span class="post-date">May 21, 2019</span> -->
+                      </span>
+                      
+                      <h2 class="post-title" style="margin-top: 3%;"><a href="#" class="js-ajax-link">4.Submit training report</a></h2>
+                      <p class="post-excerpt">In this step you need submit the training report</p>
+                      <span class="post-more"><a href="#" class="js-ajax-link"> <i class="fa fa-chevron-right"></i></a></span>
+                    </div>
+                  </article>
+                </div>
+            </div>
+          
+    
+        </div>
+       
+        </div>        
+       </div>
+
+
+        <!--   Core JS Files   -->
+        <script src="../assets/js/core/jquery.min.js"></script>
+        <script src="../assets/js/core/popper.min.js"></script>
+        
+        
+        <script src="../assets/js/bootstrap-material-design.js"></script>
+        
+        
+        
+        
+        <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+        <script src="../assets/js/plugins/moment.min.js"></script>
+        
+        <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+        <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+        
+        <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+        <script src="../assets/js/plugins/nouislider.min.js"></script>
+        
+        
+        
+        
+        <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+        
+        <script src="../assets/js/material-kit.js?v=2.0.0"></script>
+        
+        
+        <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+        <script src="../assets/assets-for-demo/js/material-kit-demo.js"></script>
+        
+        <script>
+        // by
+        // abubakersaeed.netlify.com | @AbubakerSaeed96
+        // ============================================
+        
+        // Inspiration:
+        // Tilt.js: https://gijsroge.github.io/tilt.js/
+        // Andy Merskin's parallax depth cards pen: https://codepen.io/andymerskin/full/XNMWvQ/
+        
+        // Thank You for Viewing
+        
+        class parallaxTiltEffect {
+        
+        constructor({element, tiltEffect}) {
+        
+          this.element = element;
+          this.container = this.element.querySelector(".container");
+          this.size = [300, 360];
+          [this.w, this.h] = this.size;
+        
+          this.tiltEffect = tiltEffect;
+        
+          this.mouseOnComponent = false;
+        
+          this.handleMouseMove = this.handleMouseMove.bind(this);
+          this.handleMouseEnter = this.handleMouseEnter.bind(this);
+          this.handleMouseLeave = this.handleMouseLeave.bind(this);
+          this.defaultStates = this.defaultStates.bind(this);
+          this.setProperty = this.setProperty.bind(this);
+          this.init = this.init.bind(this);
+        
+          this.init();
+        }
+        
+        handleMouseMove(event) {
+          const {offsetX, offsetY} = event;
+        
+          let X;
+          let Y;
+        
+          if (this.tiltEffect === "reverse") {
+            X = ((offsetX - (this.w/2)) / 3) / 3;
+            Y = (-(offsetY - (this.h/2)) / 3) / 3;
+          }
+        
+          else if (this.tiltEffect === "normal") {
+            X = (-(offsetX - (this.w/2)) / 3) / 3;
+            Y = ((offsetY - (this.h/2)) / 3) / 3;
+          }
+        
+          this.setProperty('--rY', X.toFixed(2));
+          this.setProperty('--rX', Y.toFixed(2));
+        
+          this.setProperty('--bY', (80 - (X/4).toFixed(2)) + '%');
+          this.setProperty('--bX', (50 - (Y/4).toFixed(2)) + '%');
+        }
+        
+        handleMouseEnter() {
+          this.mouseOnComponent = true;
+          this.container.classList.add("container--active");
+        }
+        
+        handleMouseLeave() {
+          this.mouseOnComponent = false;
+          this.defaultStates();
+        }
+        
+        defaultStates() {
+          this.container.classList.remove("container--active");
+          this.setProperty('--rY', 0);
+          this.setProperty('--rX', 0);
+          this.setProperty('--bY', '80%');
+          this.setProperty('--bX', '50%');
+        }
+        
+        setProperty(p, v) {
+          return this.container.style.setProperty(p, v);
+        }
+        
+        init() {
+          this.element.addEventListener('mousemove', this.handleMouseMove);
+          this.element.addEventListener('mouseenter', this.handleMouseEnter);
+          this.element.addEventListener('mouseleave', this.handleMouseLeave);
+        }
+        
+        }
+        
+        const $ = e => document.querySelector(e);
+        
+        const wrap1 = new parallaxTiltEffect({
+        element: $('.wrap--1'),
+        tiltEffect: 'reverse'
+        });
+        
+        const wrap2 = new parallaxTiltEffect({
+        element: $('.wrap--2'),
+        tiltEffect: 'normal'
+        });
+        
+        const wrap3 = new parallaxTiltEffect({
+        element: $('.wrap--3'),
+        tiltEffect: 'reverse'
+        });
+        
+        
+        </script>
+
+<script src="form.js"></script>
+<script>
+    firebase.auth().onAuthStateChanged(function()
+    {
+        if(user)
+        {
+            window.location.href = "new.html";
+        }
+    });
+</script>
+        
+
+
+</body>
+
+</html>
