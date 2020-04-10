@@ -243,3 +243,18 @@ a {
    background: #27AE60;
    color: rgb(110, 106, 106);
 }
+.upload-group{
+    width: 100px;
+    height: 40px;
+    margin-left: 68px;
+    color: white;
+    padding: 5 5 5 5;
+    text-align: center;
+    background-image: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
+}
+#file{
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+    z-index: -1;
+}

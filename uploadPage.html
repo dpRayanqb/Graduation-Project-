@@ -36,14 +36,19 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  const selectedFile = document.getElementById('file');
-  selectedFile.change(function(event){
-    selectedFile = event.target.file[0];
+  var selectedFile;
+  $(document).ready(function(){
+    $("#submit-btn").hide();
+  });
+    
+  $(document).on("change", function(event){
+    selectedFile = event.target.files[0];
+    $("#submit-btn").show();
   });
 
 
   function uploadFile(){
-    var filename = selectedFile;
+    var filename = selectedFile.name;
     var storageRef = firebase.storage().ref('/Documents/' + filename);
     var uploadTask = storageRef.put(selectedFile);
     // Register three observers:
@@ -60,6 +65,7 @@
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
         console.log('File available at', downloadURL);
+        alert("File has been submitted");
       });
     
       });
@@ -176,8 +182,10 @@
             <br>
                 
             <br>
-            
-            <input style="margin-left:10% ;" type="file" id="file" value="upload"/>
+            <label class="upload-group">
+              Choose File
+              <input style="margin-left:10% ;" type="file" id="file" value="upload"/>
+            </label>
             <button id="submit-btn" onclick="uploadFile()">Submit</button>
             </div>
             
