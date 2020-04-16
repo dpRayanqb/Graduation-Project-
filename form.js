@@ -13,26 +13,50 @@
   firebase.initializeApp(firebaseConfig);
 
   
-
+  var user;
   const auth = firebase.auth();
+  // Get a reference to the database service
+  var database = firebase.database();
 
 
-  function signUp(){
-      var email = document.getElementById("email");
-      var password = document.getElementById("password");
+  // function signUp(){
+  //     var email = document.getElementById("email");
+  //     var password = document.getElementById("password");
 
-      const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-      promise.catch(e => alert(e.message));
+  //     const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+  //     promise.catch(e => alert(e.message));
 
-      alert("Sign Up");
+  //     alert("Sign Up");
+  // }
+  function writeUserData() {
+    firebase.database().ref('Users/' + user.uid).set({
+      email:user.email,
+    });
   }
-
+  // function writeDocumentData(){
+  //   var postKey = firebase.database().ref('Documents/').push().key;
+  //   var downloadURL = uploadTask.snapshot.downloadURL;
+  //   var updates = {};
+  //   var postData = {
+  //     url: downloadURL,
+  //     name: filename,
+  //     user: user.uid
+  //   };
+  //   updates['/Documents/'+postKey] = postData;
+  //   firebase.database().ref().update(updates);
+  // }
   function signIn(){
     var email = document.getElementById("email");
     var password = document.getElementById("password");
     
 
-    const promise = auth.signInWithEmailAndPassword(email.value, password.value);
+    const promise = auth.signInWithEmailAndPassword(email.value, password.value).then(function(result){
+      var token = result.user.uid;
+      user = result.user;
+      sessionStorage.token = token;
+      
+    });
+    
     if(promise.catch){
       promise.catch(e => alert(e.message));
     }
@@ -44,32 +68,32 @@
       alert(" Signed Out");
       window.location = "new.html";
   }
-  const selectedFile = document.getElementById('file');
-  selectedFile.on("change", function(event){
-    selectedFile = event.target.file[0];
-  });
+  // const selectedFile = document.getElementById('file');
+  // selectedFile.on("change", function(event){
+  //   selectedFile = event.target.file[0];
+  // });
 
 
-  function uploadFile(){
-    var filename = selectedFile;
-    var storageRef = firebase.storage().ref('/Documents/' + filename);
-    var uploadTask = storageRef.put(selectedFile);
-    // Register three observers:
-    // 1. 'state_changed' observer, called any time the state changes
-    // 2. Error observer, called on failure
-    // 3. Completion observer, called on successful completion
-    uploadTask.on('state_changed', function(snapshot){
-      // Observe state change events such as progress, pause, and resume
-      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-    }, function(error) {
-      // Handle unsuccessful uploads
-    }, function() {
-      // Handle successful uploads on complete
-      // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-      uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-        console.log('File available at', downloadURL);
-      });
+  // function uploadFile(){
+  //   var filename = selectedFile;
+  //   var storageRef = firebase.storage().ref('/Documents/' + filename);
+  //   var uploadTask = storageRef.put(selectedFile);
+  //   // Register three observers:
+  //   // 1. 'state_changed' observer, called any time the state changes
+  //   // 2. Error observer, called on failure
+  //   // 3. Completion observer, called on successful completion
+  //   uploadTask.on('state_changed', function(snapshot){
+  //     // Observe state change events such as progress, pause, and resume
+  //     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+  //   }, function(error) {
+  //     // Handle unsuccessful uploads
+  //   }, function() {
+  //     // Handle successful uploads on complete
+  //     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  //     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+  //       console.log('File available at', downloadURL);
+  //     });
     
-      });
-  }
+  //     });
+  // }
   

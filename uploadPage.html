@@ -16,6 +16,8 @@
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -65,6 +67,14 @@
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
         console.log('File available at', downloadURL);
+        var postKey = firebase.database().ref('Documents/').push().key;
+        var updates = {};
+        var postData = {
+          url: downloadURL,
+          name: filename,
+        };
+        updates['/Documents/'+postKey] = postData;
+        firebase.database().ref().update(updates);
         alert("File has been submitted");
       });
     
@@ -72,54 +82,7 @@
   }
 </script>
 
-<!-- <script>
 
-  // Set the configuration for your app
-  // TODO: Replace with your app's config object
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDYuROPGZhuJ1kRC2KBghTxGKYZ-u4_nD8",
-    authDomain: "form-c5ed7.firebaseapp.com",
-    databaseURL: "https://form-c5ed7.firebaseio.com",
-    projectId: "form-c5ed7",
-    storageBucket: "form-c5ed7.appspot.com",
-    messagingSenderId: "770233709185",
-    appId: "1:770233709185:web:1343e9d048cf3f7b9f5380"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  // Get Elements 
-  var uploader = document.getElementById("uploader");
-  var fileButton = document.getElementById("filebutton").addEventListener("change" , function(e){
-
-  //Listen for file selection 
-  
-  
-    // Get File
-      var file = e.target.files[0];
-    
-    // Create a Storage ref
-      var storageRef = firebase.storage().ref("Uni_Templates/" + file.name);
-    
-    // Upload file
-      var task = storageRef.put(file);
-
-    // Update a progress bar 
-    task.on("state_changed" , 
-    function progress(snapshot){
-      var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      uploader.value = percentage;
-    }
-    // function error(err){
-
-    // },
-    // function complete(){
-
-    // }
-    );
-  });
-</script> -->
 
 <body style="background-image: linear-gradient(to top, #30cfd0 0%, #330867 );">
       <div class="container" style="height: 100%; background-color: aliceblue;">
@@ -145,9 +108,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\TrainingProgress.html" class="nav-link" style="color: black;">
+                <!-- <a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\TrainingProgress.html" class="nav-link" style="color: black;">
                   Training Progress
-                </a>
+                </a> -->
               </li>
               <li class="nav-item">
                 <a href="https://edugate.ksu.edu.sa" class="nav-link" style="color: black;">
