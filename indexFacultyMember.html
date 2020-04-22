@@ -1,0 +1,76 @@
+<html> 
+<head>
+<title>Faculty Member Login Form</title>
+    
+    <link rel="stylesheet" type="text/css" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+
+    <script src="form.js"></script>
+
+    
+</head>
+<body>
+    <div id="login_div" class="loginbox" style="width: fit-content; ">
+    <img src="ksu logo.png" class="avatar">
+        <h1>Internship Managment System</h1>
+        <h1>  نظام ادارة التدريب التعاوني </h1>
+
+
+        <div class="dropdown">
+          <button class="dropbtn">Type</button>
+          <div class="dropdown-content">
+            <a href="new.html">Student</a>
+            <a href="indexFacultyMember.html">Faculty Member</a>
+          </div>
+      </div>
+        
+            <p>Username</p>
+            <input type="text" placeholder="Enter Email" id="email">
+            <p>Password</p>
+            <input type="password" placeholder="Enter Password" id="password">
+            
+            <button id="signIn" onclick="signIn()" style="margin-left: 28%;">Sign In</button>
+        
+    </div>
+    <script>
+      firebase.auth().onAuthStateChanged(user => {
+          if(user) {
+              writeUserData();
+              window.location = 'FacultyHomePage.html'; //After successful login, user will be redirected to FacultyHomePage.html
+          }
+      })
+  </script>
+
+
+
+</body>
+   
+
+
+</html>
+<!-- <html>
+<head>
+<title> Login Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+<body>
+    <div class="wrapper">
+        <form class="form-signin">       
+          <h2 class="form-signin-heading">Please login</h2>
+          <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+          <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+          <label class="checkbox">
+            <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+          </label>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+        </form>
+      </div>
+</body>
+</head>
+</html> -->

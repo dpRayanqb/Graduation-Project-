@@ -26,6 +26,7 @@ function quaryDatabase(token){
             var col = document.createElement("div");
             var p = document.createElement("p");
             $(p).html(currenObject.name);
+            document.getElementById("NameOfFile").innerHTML=(currenObject.name);
             console.log(currenObject.name);
             console.log(currenObject.url);
             $(col).append(p);
@@ -35,4 +36,19 @@ function quaryDatabase(token){
        
         // ...
       });
+}
+function Database(token){
+  firebase.database().ref('/Documents/').once('value').then(function(snapshot) {
+    var PostObject = snapshot.val();
+    var keys = Object.keys(PostObject);
+    for (var i = 0; i< keys.length; i++){
+      var currenObject = PostObject[keys[i]];
+      window.location = currenObject.url;
+    }
+       
+    // ...
+  });
+}
+function hide(){
+  $("#hide").hide();
 }

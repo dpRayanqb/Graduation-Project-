@@ -1,12 +1,16 @@
 <html>
 <head>
 
-    <link rel="stylesheet" type="text/css" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\Internship Managment System\MyCss\FacultyHomePage.css">
+    <link rel="stylesheet" type="text/css" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyHomePage.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="materia-kit.css">
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
 
     <title>Home Page</title>>
+    <script src="form.js"></script>
+
 
 </head>
 
@@ -18,7 +22,7 @@
                <nav class="navbar navbar-expand-lg bg-rose">
                   <div class="container">
                     <div class="navbar-translate">
-                      <a class="navbar-brand" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\Internship Managment System\Pages\FacultyHomePage.html" style="color: black;" >Menu</a>
+                      <a class="navbar-brand" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyHomePage.html" style="color: black;" >Menu</a>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="navbar-toggler-icon"></span>
@@ -29,7 +33,7 @@
                     <div class="collapse navbar-collapse">
                       <ul class="navbar-nav ml-auto">
                         <li class="active nav-item">
-                          <a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\Internship Managment System\Pages\FacultyHomePage.html" class="nav-link" style="color: black;">
+                          <a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyHomePage.html" class="nav-link" style="color: black;">
                               Home
                           </a>
                         </li>
@@ -39,6 +43,7 @@
                             Edugate
                           </a>
                         </li>
+                        <button id="logout" onclick="signOut()" style="color: black"> LogOut </button>
                       </ul>
                     </div>
                   </div>
@@ -57,7 +62,7 @@
                   <div class="col-xs-12 col-sm-6 col-lg-3">
                     <article>
                       <div class="post-card inner" style="background-color: aliceblue;">
-                        <a class="post-link js-ajax-link" href=""></a>
+                        <a class="post-link js-ajax-link" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyCompanyConfirmation.html"></a>
                          <!-- <figure class="post-image"> -->
                       <!-- <a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\uploadPage.html" class="js-ajax-link"> -->
                         <img src="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\screenshot_11.png" alt="Submit company confirmation">
@@ -66,9 +71,9 @@
                         <span class="post-meta">
                           <!-- <span class="post-date">May 21, 2019</span> -->
                         </span>
-                        <h2 class="post-title"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\Internship Managment System\Pages\uploadPage.html" class="js-ajax-link">View Company Confirmation</a></h2>
+                        <h2 class="post-title"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyCompanyConfirmation.html" class="js-ajax-link">View Company Confirmation</a></h2>
                         <p class="post-excerpt" >Here you can view the submitted company confirmation approval</p>
-                        <span class="post-more"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\Internship Managment System\Pages\uploadPage.html" class="js-ajax-link"> <i class="fa fa-chevron-right"></i></a></span>
+                        <span class="post-more"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyCompanyConfirmation.html" class="js-ajax-link"> <i class="fa fa-chevron-right"></i></a></span>
                       </div>
                     </article>
                   </div>
@@ -83,7 +88,7 @@
                       <div class="post-card inner" style="background-color: aliceblue; ">
                         
     
-                        <a class="post-link js-ajax-link" href=""  ></a>
+                        <a class="post-link js-ajax-link" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyMemberTrainingPlan.html"  ></a>
                         <!-- <figure class="post-image" style="z-index: 1; ">
                       <a href="#" class="js-ajax-link"> -->
                         <img style="width: 250px; height: 250px;" src="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\screenshot_12.png" alt="Submit training plan">
@@ -92,9 +97,9 @@
                         <span class="post-meta">
                           <!-- <span class="post-date">May 21, 2019</span> -->
                         </span>
-                        <h2 class="post-title"><a href="" class="js-ajax-link">View Training plan</a></h2>
+                        <h2 class="post-title"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyMemberTrainingPlan.html" class="js-ajax-link">View Training plan</a></h2>
                         <p class="post-excerpt">Here you can view the submitted training plan</p>
-                        <span class="post-more"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\Internship Managment System\Pages\submitTrainingPlan.html" class="js-ajax-link"><i class="fa fa-chevron-right"></i></a></span>
+                        <span class="post-more"><a href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyMemberTrainingPlan.html" class="js-ajax-link"><i class="fa fa-chevron-right"></i></a></span>
                       </div>
                     </article>
                   </div>
@@ -102,10 +107,10 @@
                     <article>
                       <div class="post-card inner" style="background-color: aliceblue;">
                         
-                        <a class="post-link js-ajax-link" href=""></a>
+                        <a class="post-link js-ajax-link" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyMemberEvaluation.html"></a>
                         <!-- <figure class="post-image">
                       <a href="#" class="js-ajax-link"> -->
-                        <img src="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\screenshot_5.png" alt="Submit evaluation form">
+                        <img src="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\Screenshot_16.png" alt="Submit evaluation form">
                       <!-- </a>
                     </figure> -->
                         <span class="post-meta">
@@ -122,7 +127,7 @@
                       <article>
                         <div class="post-card inner" style="background-color: aliceblue;">
                             
-                          <a class="post-link js-ajax-link" href=""></a>
+                          <a class="post-link js-ajax-link" href="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\FacultyMemberTrainingReport.html"></a>
                           <!-- <figure class="post-image" style="z-index: 1;">
                         <a href="#" class="js-ajax-link"> -->
                           <img style="width: 250px; height: 250px;" src="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\screenshot_15.png" alt="Submit training report">

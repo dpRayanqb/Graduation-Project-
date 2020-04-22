@@ -1,12 +1,14 @@
 <html>
+
 <head>
-<link rel="stylesheet" type="text/css" href="FacultyCompanyConfirmation.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
-<title> Approve Company Confirmation </title>
+    <link rel="stylesheet" type="text/css" href="FacultyMemberTrainingPlan.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <title> View Training Plan </title>
+
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
@@ -31,9 +33,9 @@
 
 </head>
 
-<body>
+<body style="background-image:linear-gradient(to top, #30cfd0 0%, #330867 100%)">
 
-    <body style="background-image:linear-gradient(to top, #30cfd0 0%, #330867 100%)">
+    
         <div id="user_div" class="container" style="height: 100%; background-color: aliceblue;">
           
                <!--        info navbar -->
@@ -74,7 +76,7 @@
                          
                            
                            
-                           <h2 style="margin-left: 15%; margin-top: 5%; color:black; padding-top: 3%;"> You can view the students submission for company confirmation</h2>
+                           <h2 style="margin-left: 15%; margin-top: 5%; color:black; padding-top: 3%;"> You can view the students submission for training plan </h2>
                            <br>
                            <!-- <article style="text-align: left;color:black;padding-right: 13%; padding-left: 13%;">In this step you need to upload the company tep </article>
                            <br>   -->
@@ -101,8 +103,8 @@
                      </div>
                    </div> -->
                    <br>
-                   <p style="margin-left: 45%; margin-top: 15%;" class="hide" id="NameOfFile"></p> 
-                   <button id="approve" class="hide" style="margin-left: 45%;" onclick="Database()"> Download </button><br><br><button onclick="hide()" style="margin-left: 45%;">Approve</button>
+                   <p style="margin-left: 45%; margin-top: 15%;" id="NameOfFile"></p> 
+                   <button style="margin-left: 45%;" onclick="Database()"> Download </button><br><br><button style="margin-left: 45%;">Approve</button>
                    <!-- <p id="p"> lskhflksehf </p>
                    <img src="C:\Users\rkwab\OneDrive\Desktop\Study\lvl 8\SWE 497\test\ksu logo.png" style="width: 20%;" id="image">
                     -->
@@ -124,7 +126,7 @@
                        </tr>
                    </table>
                 </div> -->
-</body>
 
+</body>
 
 </html>
